@@ -1,0 +1,401 @@
+
+/*poppins yazı tipini import ettim*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --main-color:rgb(151,0,0);
+    --black-color:rgb(15, 15, 15);
+    --border:0.1rem solid rgba(255,255,255,0.4);
+}
+
+*{
+    font-family:'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    outline:none;
+    border:none;
+    text-decoration:none;
+    text-transform:capitalize;
+    transition:0.2 ease;
+}
+
+html{
+    font-size:62.5%;/*remi px cinsinden yuvarladım 1rem:10px oldu*/
+    overflow-x: hidden;
+
+}
+
+
+body{
+    background-color: var(--main-color);
+    
+}
+
+section{
+    padding: 3.5rem 7%;
+}
+
+a{
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 2rem 3.75rem;
+    border-radius: 30rem;
+    font-size: 1.7rem;
+    background-color: var(--black-color);
+    color: #fff;
+    cursor: pointer;/*mause geldiğinde tıklanabilir imleç gelmesi için */
+}
+
+.heading{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 4rem;
+    margin-bottom: 3.5rem;
+    border-bottom: 0.1rem solid #fff;
+}
+
+.heading span{
+    text-transform: uppercase;
+    color: var(--black-color);
+}
+
+/* header start*/
+.header{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 7%;
+    margin: 2rem 7%;
+    border-radius: 3rem;
+    box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.75);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    border-bottom: 0.1rem solid transparent;
+}
+
+.header .navbar .activ,
+.header .navbar a:hover{
+    border-color: var(--main-color);
+    padding-bottom:0.5rem ;
+}
+
+.header #menu-btn{
+   
+    display: none;
+}
+
+.header .parkur-container{
+    position: absolute;
+    top: 100%;
+    right: 19%;
+    background-color: white;
+    width: 30rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    transform: scaleY(0);/*arama çubuğunu yok ettim*/
+}
+
+
+.header .parkur-container.active{
+    transform: scaleY(1);/*js kodu ile arama butonuna bastığında aram çubugu gelemsini sağlasmı için*/
+}
+
+.header .parkur-container a{
+    font-size: 3rem;
+}
+
+.header .parkur-container a:hover{
+  
+    border-bottom: 1px solid red; /* Çizgi rengi ve kalınlığı */
+    padding-bottom: 5px; /* İsteğe bağlı: Yazının altına biraz boşluk bırakır */
+
+}
+
+/*home strat*/
+.home{
+    
+    
+    min-height: 100vh;
+    background-image: url(resimler/home.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -14.5rem;
+    display: flex;
+    align-items:center;
+}
+
+.home .content{
+    max-width: 60rem;
+    
+}
+
+.home .content h3{
+    font-size: 6rem;
+    color: rgba(113, 113, 113, 0.761);
+    text-shadow: 5px 3px 3px #000000;
+}
+.home .content p{
+    background-color: transparent; 
+    font-size: 2rem;
+    font-weight:800;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: rgb(255, 0, 0);
+    text-shadow: 5px 3px 3px #000000;
+    
+    
+    
+}
+/*home end*/
+
+/*Parkur start*/
+.parkur .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 1rem;
+}
+
+.parkur .box-container .box{
+    padding: 3rem;
+    background-color: #fff;
+    border-radius: 5rem;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.parkur .box-container .box img{
+    width: 100%;
+    object-fit:cover;
+    border-radius: 3rem;
+
+}
+
+
+
+.parkur .box-container .box h3{
+    font-size: 5rem;
+    padding: 1rem;
+}
+/*Parkur end*/
+
+/*Hakkımızda start*/
+.hakkımızda .row{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 5;
+    
+}
+
+.hakkımızda .gallery .gallery-item{
+    width: 25%;
+    float: right;
+    border: 1px solid var(--black-color);
+    
+}
+
+.hakkımızda .gallery .gallery-item:hover{
+    border-color: #fff;
+    cursor: pointer;
+}
+
+.hakkımızda .gallery .gallery-item img{
+    width: 100%;
+}
+
+.hakkımızda .row .content{
+    background-color: #fff;
+    align-items: center;
+}
+
+.hakkımızda .row .content h2{
+    font-size: 3rem;
+    padding: 3% 0% 2% 20%;
+}
+
+.hakkımızda .row .content p{
+    font-size: 2rem;
+    padding: 1% 5% 2% 5%;
+}
+
+.hakkımızda .row .content .buton{
+    padding: 0% 2% 5% 35%;
+}
+
+/*Hakkımızda end*/
+
+/*konteyner start*/
+.konteyner .row{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;/*resim ile yazı arasındaki boşluğu uygulamak için*/
+    background-color: #fff;
+}
+
+.konteyner .row .image{
+    flex: 1 1 45rem;/* esnek bir kutu modeli oluşturmak için kullandım*/
+}
+
+.konteyner .row .image img{
+    width: 100%;
+}
+
+.konteyner .row .content{
+    flex: 1 1 45rem;
+    text-align: center;
+}
+
+.konteyner .row .content h3{
+    font-size: 4rem;
+}
+
+.konteyner .row .content p{
+    font-size: 1.76rem;
+    padding: 1rem 1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/*konteyner end*/
+
+/*iletişim start*/
+
+.iletisim .row{
+    display: flex;
+    background-color: var(--black-color);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.iletisim .row .map{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.iletisim .row .container{
+    align-items: center;
+    text-align: center;
+    flex: 1 1 45rem;
+}
+
+.iletisim .row .container h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 4rem;
+    padding: 4rem;
+}
+
+.iletisim .row .container h3 span{
+    text-transform: uppercase;
+    color: var(--main-color);
+    font-size: 4rem;
+    
+}
+.iletisim .row .container h3 a{
+    
+    color: #fff;
+    font-size: 3rem;
+    padding: 2rem;
+}
+
+.iletisim .row .container a{
+    color: #fff;
+    font-size: 2rem;
+}
+
+.iletisim .row .mail{
+    font-size: 3rem;
+    padding: 4rem;
+}
+
+.iletisim .sosyalMedya{
+    padding: 2rem 0;
+    align-items: center;
+}
+
+.iletisim .sosyalMedya a{
+   width: 5rem;
+   height: 5rem;
+   line-height: 5rem;
+   color: #fff;
+   font-size: 20px;
+   border: var(--border);
+   border-radius: 50%;
+   margin: 0.3rem;
+   
+}
+/*iletişim end*/
+
+@media (max-width:768px) {
+    .header #menu-btn{
+        display: inline-block;
+        cursor: pointer;
+        font-size: 2.5rem;
+        margin-left: 2rem;
+        background-color: transparent;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 95%;
+        background-color: #fff;
+        height: (100vh - 50vh);
+        width: 30rem;
+        box-shadow: 0px 20px 14px 0px rgb(0 0 0 / 75%);
+        right: -100%;/* menuyu burda en sağa atarak gizledim*/
+    }
+
+    .header .navbar.active{
+        right: 3rem;/*js kodu yazılarak menuye bastığında aktif olması için */
+    }
+    
+    .header .navbar a{
+        color:var(--black-color);
+        display: block;
+        margin:1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;  
+    }
+
+    .header .navbar #parkur-btn {
+        order: 1; /* parkur-btn'yi ilk sıraya getir */
+       
+    }
+
+    .header .navbar .parkur-container {
+        order: 2; /* parkur-container'ı ikinci sıraya getir */
+        margin-top: 1rem; /* İsteğe bağlı: parkur-container'ı biraz alta kaydır */
+        height: 25rem;
+    }
+}
+
